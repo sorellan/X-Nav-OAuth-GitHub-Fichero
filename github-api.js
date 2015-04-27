@@ -47,7 +47,7 @@ function getRepo() {
                 "<ul><li>Full name: " + repo.full_name + "</li>" +
                 "<li>Description: " + repo.description + "</li>" +
                 "<li>Created at: " + repo.created_at + "</li>" +
-                "<li>Html url: <a href='" + repo.html_url + "'>" + repo.html_url + "</li>" + 
+                "<li>Html url: <a href='" + repo.html_url + "'>" + repo.html_url + "</a></li>" + 
                 "<li>Files:<ul id='list_files'></ul></li></ul>");
             listFiles();
         }
@@ -82,15 +82,7 @@ function selectFile() {
 };
 
 function setFile() {
-    repo.write('master', $("#file").val(), $("#content").val(), 'Created file', function(err) {
-        if(err) {
-            results.append("<p>Error: " + err.error + "</p>");
-        } else {
-            results.append("<p>Created file</p>" + 
-                "<button type='button' id='read'>Read file</button>");
-            $("#read").click(readFile);
-        }
-    });
+    repo.write('master', $("#file").val(), $("#content").val(), 'Created file', function(err) {});
 };
 
 function readFile() {
