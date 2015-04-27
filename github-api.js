@@ -10,9 +10,8 @@ var repoFile = "File: <input type='text' name='file' value='filename' " +
     "id='file' size='10' />" +
     "<button type='button' id='write'>Write File!</button>" +
     "<button type='button' id='read'>Read File!</button><br/>" +
-    "Content: <textarea name='content' value='content' " +
-    "id='content' rows='4' cols='40' </textarea>" +
-    "<button type='button'>Create file</button>";
+    "<textarea name='content' value='content' " +
+    "id='content' rows='4' cols='40' </textarea>";
 
 function login(network) {
     var access = hello(network);
@@ -49,10 +48,8 @@ function getRepo() {
                 "<li>Description: " + repo.description + "</li>" +
                 "<li>Created at: " + repo.created_at + "</li>" +
                 "<li>Html url: <a href='" + repo.html_url + "'>" + repo.html_url + "</li>" + 
-                "<li><ul id='list_files'>Files:</ul></li></ul>");
+                "<li>Files:<ul id='list_files'></ul></li></ul>");
             listFiles();
-            //$("#form_file").html(repoFile);
-            //$("#form_file button").click(setFile);
         }
     });
 };
